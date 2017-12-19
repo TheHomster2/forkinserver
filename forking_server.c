@@ -54,4 +54,5 @@ void process(char * buf) {
     else if (('z' - 13 < buf[i]) && (buf[i] < 'z'))
       buf[i] += 'A' - 'a' - 13;
     i ++;
+  }
 }
