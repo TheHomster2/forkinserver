@@ -1,3 +1,5 @@
+all: forking
+	
 forking: client fserver
 
 basic: client bserver
