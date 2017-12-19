@@ -26,3 +26,9 @@ pipe_networking.o: pipe_networking.c pipe_networking.h
 clean:
 	rm *.o
 	rm *~
+
+s: all
+	./forking_server
+
+c: all
+	./client
