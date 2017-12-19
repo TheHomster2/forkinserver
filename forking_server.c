@@ -38,8 +38,8 @@ void subserver(int from_client) {
     process(buf);
     printf("I want to kill myself %s\n", buf);
     write(to_client, buf, sizeof(buf));
+    printf("I want to kill myself %s\n", buf);
   }
-
 }
 
 // rot 13 and does upper-lowercase swapping
