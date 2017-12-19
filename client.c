@@ -1,13 +1,13 @@
 #include "pipe_networking.h"
 
 int main() {
-
   int to_server;
   int from_server;
   char buffer[BUFFER_SIZE];
 
   from_server = client_handshake( &to_server );
 
+  // exchange messages until user disconnects
   while (1) {
     printf("enter data: ");
     fgets(buffer, sizeof(buffer), stdin);
