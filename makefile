@@ -1,5 +1,5 @@
 all: forking
-	
+
 forking: client fserver
 
 basic: client bserver
@@ -30,7 +30,7 @@ clean:
 	rm *~
 
 s: all
-	./forking_server
+	./server
 
 c: all
 	./client
