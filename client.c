@@ -17,6 +17,7 @@ int main() {
 
     printf("sent:%s\n", buffer);
     read(from_server, buffer, sizeof(buffer));
+    perror("read");
     printf("received: [%s]\n", buffer);
   }
 }
