@@ -113,6 +113,7 @@ int client_handshake(int *to_server) {
 
   // remove pp
   remove(buffer);
+  perror("remove");
   printf("[client] handshake: removed pp\n");
 
   // send ACK to server
