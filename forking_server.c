@@ -44,7 +44,7 @@ void subserver(int from_client) {
 // rot 13 and does upper-lowercase swapping
 void process(char * buf) {
   int i = 0;
-  while(buf[i]){
+  while(i < strlen(buf)){
     if (('a' <= buf[i]) && (buf[i] < 'a' + 13))
       buf[i] += 'A' - 'a' + 13;
     else if (('A' <= buf[i]) && (buf[i] < 'A' + 13))
