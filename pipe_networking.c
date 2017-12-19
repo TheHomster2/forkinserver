@@ -34,13 +34,17 @@ int server_connect(int from) {
   printf("handshake recieved:%s\n", buf);
 
   int to = open(buf, O_WRONLY);
-  buf = ACK;
-  write(to, buf, sizeof(buf));
+  buff[HANDSHAKE_BUFFER_SIZE] = ACK;
+  write(to, buff, sizeof(buff));
 
-  read(from, buf, sizeof(buf));
-  printf("handshake recieved:%s\n", buf);
+  read(from, buff, sizeof(buff));
+  printf("handshake recieved:%s\n", buff);
 
-  return from_client;
+  // check message
+  if(strcmp(buff, ACK))
+    printf("wrong message: %s\n", buff);
+
+  return from;
 }
 
 /*=========================
