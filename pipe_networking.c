@@ -34,7 +34,7 @@ int server_connect(int from) {
   printf("handshake recieved:%s\n", buf);
 
   int to = open(buf, O_WRONLY);
-  buff[HANDSHAKE_BUFFER_SIZE] = ACK;
+  char buff[HANDSHAKE_BUFFER_SIZE] = ACK;
   write(to, buff, sizeof(buff));
 
   read(from, buff, sizeof(buff));
