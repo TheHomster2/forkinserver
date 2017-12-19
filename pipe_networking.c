@@ -107,17 +107,17 @@ int client_handshake(int *to_server) {
 
   // open and wait for connection
   from_server = open(buffer, O_RDONLY, 0);
-  read(from_server, buffer, sizeof(buffer));
+  char buffer2[HANDSHAKE_BUFFER_SIZE];
+  read(from_server, buffer2, sizeof(buffer2));
   /*validate buffer code goes here */
-  printf("[client] handshake: received [%s]\n", buffer);
+  printf("[client] handshake: received [%s]\n", buffer2);
 
   // remove pp
   remove(buffer);
-  perror("remove");
   printf("[client] handshake: removed pp\n");
 
   // send ACK to server
-  write(*to_server, ACK, sizeof(buffer));
+  write(*to_server, buffer2, sizeof(buffer2));
 
   return from_server;
 }
