@@ -45,6 +45,7 @@ void subserver(int from_client) {
 void process(char * buf) {
   int i = 0;
   while(i < strlen(buf)){
+    printf("I want to kill myself please do something\n");
     if (('a' <= buf[i]) && (buf[i] < 'a' + 13))
       buf[i] += 'A' - 'a' + 13;
     else if (('A' <= buf[i]) && (buf[i] < 'A' + 13))
