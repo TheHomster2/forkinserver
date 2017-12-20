@@ -15,7 +15,7 @@ int server_setup() {
   mkfifo("luigi", 0644);
   printf("luigi made\n");
   int from = open("luigi", O_RDONLY);
-  printf("from client: %d\n", from);
+  // printf("from client: %d\n", from);
   remove("luigi");
   return from;
 }
@@ -35,7 +35,7 @@ int server_connect(int from) {
   printf("handshake recieved:%s\n", buf);
 
   int to = open(buf, O_WRONLY);
-  printf("to_client:%d\n", to);
+  // printf("to_client:%d\n", to);
   char buff[HANDSHAKE_BUFFER_SIZE] = ACK;
   write(to, buff, sizeof(buff));
 
@@ -99,7 +99,7 @@ int client_handshake(int *to_server) {
   // send pp name to server
   printf("[client] handshake: connecting to wkp\n");
   *to_server = open( "luigi", O_WRONLY, 0);
-  printf("to server:%d\n", *to_server);
+  // printf("to server:%d\n", *to_server);
   if ( *to_server == -1 )
     exit(1);
 
@@ -110,7 +110,7 @@ int client_handshake(int *to_server) {
 
   // open and wait for connection
   from_server = open(buffer, O_RDONLY, 0);
-  printf("from server:%d\n", from_server);
+  // printf("from server:%d\n", from_server);
   char buffer2[HANDSHAKE_BUFFER_SIZE];
   read(from_server, buffer2, sizeof(buffer2));
   /*validate buffer code goes here */
