@@ -15,9 +15,9 @@ int main() {
 
     write(to_server, buffer, sizeof(buffer));
 
-    printf("sent:%s\n", buffer);
+    printf("sent: [%s]\n", buffer);
     read(from_server, buffer, sizeof(buffer));
-    perror("read");
+    // perror("read");
     printf("received: [%s]\n", buffer);
   }
 }
