@@ -6,7 +6,9 @@ void subserver(int from_client);
 
 static void sighandler(int signo) {
   if (signo == SIGINT) {
+    // not sure why luigi is not being removed
     remove("luigi");
+    perror("remove");
     exit(0);
   }
 }
