@@ -6,7 +6,7 @@ int main() {
   char buffer[BUFFER_SIZE];
 
   from_server = client_handshake( &to_server );
-
+  printf("toserver:%d\n from_server: %d", to_server, from_server);
   // exchange messages until user disconnects
   while (1) {
     printf("enter data: ");

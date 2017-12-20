@@ -31,6 +31,7 @@ void subserver(int from_client) {
   // finish handshake
   int to_client = server_connect(from_client);
 
+  printf("toclien: %d\nfromclient: %d\n", to_client, from_client);
   // handle all client requests
   char buf[BUFFER_SIZE];
   while(read(from_client, buf, sizeof(buf))){
