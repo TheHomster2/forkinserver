@@ -46,7 +46,7 @@ int server_connect(int from) {
   if(strcmp(buff, ACK))
     printf("wrong message: %s\n", buff);
 
-  return from;
+  return to;
 }
 
 /*=========================
