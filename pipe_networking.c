@@ -110,7 +110,7 @@ int client_handshake(int *to_server) {
 
   // open and wait for connection
   from_server = open(buffer, O_RDONLY, 0);
-  print("from server:%d\n", from_server);
+  printf("from server:%d\n", from_server);
   char buffer2[HANDSHAKE_BUFFER_SIZE];
   read(from_server, buffer2, sizeof(buffer2));
   /*validate buffer code goes here */
